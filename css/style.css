@@ -1,0 +1,165 @@
+/* Poppins font (using Google fonts) with serif */
+/*“concrete_seamless.png” as a background-image, backup color of #f1f1f1*/
+body{
+    font-family: 'Poppins', serif;
+    background-color: #f1f1f1;
+    background-image: url('../images/concrete_seamless.png');
+  }
+
+  /*header tag flex*/
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+  /*nav links flex*/
+.nav_links{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*links same color even after they have been visited*/
+.nav_links a:visited {
+    color: blue;
+  }
+
+/*direct header elements of card: color, border, padding, radius*/
+.card> header:first-child{
+    background-color: #288088;
+    border: solid 2px #45ADAD;
+    padding: 20px 0px 20px;
+    border-radius: 50px 50px 0px 0px;
+    
+}
+
+.card{
+    border-radius: 50px 50px 0px 0px;
+}
+
+/*pricing flex and horizotallt & vertically centered! not sure about this one*/
+.pricing{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+/*card an initial “size” of 450px*/
+.card{
+    flex-basis: 450px;
+}
+
+/*Style the images in the gallery class*/
+.gallery img{
+    border: solid 10px #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+
+/*gallery class to use flex*/
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/*Animate the logo with keyframes*/
+#logo {
+    animation-name: movement;
+    animation-duration: 5s;
+}
+
+@keyframes movement {
+    0%   {opacity: 0; width: 25px;}
+    100% {opacity: 1; width: 475px;}
+    
+  }
+
+  /*screen-size is greater than 900px*/
+
+@media screen and (min-width: 900px){
+
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+      /*nav links flex*/
+    .nav_links{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    /*card size 250 px*/
+    .card{
+        flex-basis: 250px;
+        align-items: baseline;
+    }
+
+    /*Fix first header*/
+    body > header{
+        width: 100%;
+        position: sticky;
+        top: 0;
+    }
+}
+
+    /*Remove animation when user prefers reduced motion*/
+@media (prefers-reduced-motion) {
+    #logo {
+        animation-name: none;
+    }
+    }
+
+    /*Specifications when the page is printed*/
+@media print {
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f1f1f1;
+      }
+    
+        /*nav links flex*/
+    .nav_links{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    /*pricing class aligns along the bottom*/
+    .pricing{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: center;
+    }
+
+    /*card flex-basis and border*/
+    .card{
+        flex-basis: 225px;
+        border: solid 2px #45ADDD;
+    }
+
+    /*no gallery displayed*/
+    .gallery{
+        display: none;
+    }
+
+    #gallery{
+        display: none;
+    }
+
+     /*thumbs up*/
+    ul:nth-child(2)>li:nth-child(2)::after {
+        content: "👍";
+      }
+}
